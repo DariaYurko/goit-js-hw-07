@@ -13,8 +13,8 @@ function isEmptyString(str) {
 const inputName = document.querySelector('#name-input');
 const outputName = document.querySelector('#name-output');
 
-inputName.addEventListener('input', () => {
-  const username = inputName.value;
+inputName.addEventListener('input', event => {
+  const username = event.currentTarget.value;
 
   if (isEmptyString(username)) {
     outputName.textContent = 'Anonymous';
