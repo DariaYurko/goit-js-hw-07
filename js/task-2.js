@@ -25,6 +25,7 @@ const images = [
   },
 ];
 
+// version 1
 const galleryList = document.querySelector('.gallery');
 
 function cardTemplate(card) {
@@ -41,6 +42,8 @@ const markup = cardsTemplate(images);
 
 galleryList.innerHTML = markup;
 
+
+// version 2
 // const galleryList = document.querySelector('.gallery');
 // const arrItem = []
 // const arrImage = []
