@@ -1,7 +1,7 @@
 # My ignored files
 .prettierrc.json
-dom.html
-dom.js
+lesson1.html
+lesson1.js
 
 # Logs
 logs
