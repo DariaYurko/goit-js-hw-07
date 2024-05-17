@@ -1,0 +1,23 @@
+
+.login-form {
+   max-width: 408px;
+   padding: 24px;
+   margin: 0 auto;
+}
+
+.login-form label {
+   display: flex;
+   flex-direction: column;
+   row-gap: 8px;
+
+}
+
+.login-form label:not(:last-child) {
+   margin-bottom: 8px;
+}
+
+
+button {
+   min-width: 86px;
+   margin-top: 16px;
+}

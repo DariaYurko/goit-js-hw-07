@@ -1,0 +1,48 @@
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 24px;
+}
+
+#controls,
+#boxes {
+   padding: 32px;
+   background: #f6f6fe;
+   min-width: 486px;
+}
+
+#controls {
+   max-width: 486px;
+   margin-bottom: 16px;
+
+   display: flex;
+   column-gap: 16px;
+}
+
+#controls input {
+   flex-grow: 1;
+   background-color: inherit;
+}
+
+[data-create] {}
+
+[data-destroy] {
+   background: #ff4e4e;
+   min-width: 120px;
+}
+
+[data-destroy]:hover,
+[data-destroy]:focus {
+   background: #ff7070;
+}
+
+#boxes {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 44px;
+}
+
+#boxes>div {
+   flex-shrink: 0;
+}
