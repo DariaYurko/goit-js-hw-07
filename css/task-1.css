@@ -1,0 +1,45 @@
+body {
+   font-family: "Montserrat", sans-serif;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 1.5;
+   letter-spacing: 0.04em;
+   color: #2e2f42;
+}
+
+ul {
+   list-style: none;
+}
+
+#categories {
+   max-width: 440px;
+   padding: 24px;
+   margin: 0 auto;
+}
+
+.item {
+   background-color: #f6f6fe;
+   border-radius: 8px;
+   padding: 16px;
+}
+
+.item:not(:last-child) {
+   margin-bottom: 24px;
+}
+
+.item li {
+   border: 1px solid #808080;
+   border-radius: 4px;
+   margin-bottom: 8px;
+   padding: 8px 16px;
+
+}
+
+.item h2 {
+   font-weight: 600;
+   line-height: 1.33;
+   letter-spacing: 0.04em;
+
+
+   margin-bottom: 16px;
+}
