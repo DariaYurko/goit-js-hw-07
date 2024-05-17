@@ -25,42 +25,41 @@ const images = [
   },
 ];
 
-// version 1
-const galleryList = document.querySelector('.gallery');
+// // version 1
+// const galleryList = document.querySelector('.gallery');
 
-function cardTemplate(card) {
-  return `<li class="gallery__item">
-  <img class="gallery__image" src="${card.url}" alt="${card.alt}">
-  </li>`;
-}
+// function cardTemplate(card) {
+//   return `<li class="gallery__item">
+//   <img class="gallery__image" src="${card.url}" alt="${card.alt}">
+//   </li>`;
+// }
 
-function cardsTemplate(arr) {
-  return arr.map(cardTemplate).join('');
-}
+// function cardsTemplate(arr) {
+//   return arr.map(cardTemplate).join('');
+// }
 
-const markup = cardsTemplate(images);
+// const markup = cardsTemplate(images);
 
-galleryList.innerHTML = markup;
+// galleryList.innerHTML = markup;
 
 
 // version 2
-// const galleryList = document.querySelector('.gallery');
-// const arrItem = []
-// const arrImage = []
+const galleryList = document.querySelector('.gallery');
+const arrItem = []
+const arrImage = []
 
-// images.forEach(image => {
-//   const itemGallerry = document.createElement('li');
-//   itemGallerry.classList.add('gallery__item');
+images.forEach(image => {
+  const itemGallerry = document.createElement('li');
+  itemGallerry.classList.add('gallery__item');
 
-//   const imageGallery = document.createElement('img');
-//   imageGallery.classList.add('gallery__image');
+  const imageGallery = document.createElement('img');
+  imageGallery.classList.add('gallery__image');
 
-//   imageGallery.setAttribute('src', image.url);
-//   imageGallery.setAttribute('alt', image.alt);
+  imageGallery.setAttribute('src', image.url);
+  imageGallery.setAttribute('alt', image.alt);
 
-//   galleryList.append(itemGallerry);
-//   itemGallerry.append(imageGallery);
+  galleryList.append(itemGallerry);
+  itemGallerry.append(imageGallery);
+});
 
-// });
-
-// console.log(galleryList);
+console.log(galleryList);
