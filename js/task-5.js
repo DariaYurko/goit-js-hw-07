@@ -9,16 +9,20 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+/**
+ * Sets the background-color of the window and displays the name of the color
+ * @param {*} event
+ */
+const handleClick = event => {
+  event.preventDefault();
+  const color = getRandomHexColor();
+  bodyEl.style.backgroundColor = color;
+  spanEl.textContent = `${spanText} ${color}`;
+};
+
 const buttonEl = document.querySelector('.change-color');
 const bodyEl = document.querySelector('body');
 const spanEl = document.querySelector('.color');
 const spanText = spanEl.textContent;
 
-buttonEl.addEventListener('click', event => {
-  event.preventDefault();
-  const color = getRandomHexColor();
-
-  bodyEl.style.backgroundColor = color;
-
-  spanEl.textContent = `${spanText} ${color}`;
-});
+buttonEl.addEventListener('click', handleClick);

@@ -11,7 +11,7 @@ function getRandomHexColor() {
 
 /**
  * Creates div-elements inside div#boxes
- * @param {Number} amount 
+ * @param {Number} amount
  */
 function createBoxes(amount) {
   const arr = [];
@@ -38,9 +38,44 @@ function createBoxes(amount) {
 function destroyBoxes() {
   const boxList = document.querySelectorAll('#boxes div');
   for (let i = 0; i < boxList.length; i++) {
-    boxList[i].remove()
+    boxList[i].remove();
   }
 }
+
+/**
+ * Gets the current input value
+ * @param {*} event
+ */
+const handleClickInput = event => {
+  event.preventDefault();
+  quantityOfElem = event.currentTarget.value;
+};
+
+/**
+ * Processes click on the create-button
+ */
+const handleCreateBtnClick = event => {
+  event.preventDefault();
+
+  if (quantityOfElem >= minLimit && quantityOfElem <= maxLimit) {
+    destroyBoxes();
+    createBoxes(quantityOfElem);
+    inputElem.value = '';
+    quantityOfElem = null;
+  } else {
+    inputElem.value = '';
+    quantityOfElem = null;
+  }
+};
+
+/**
+ * Processes click on the destroy-button
+ * @param {*} event
+ */
+const handleDestroyBtnClick = event => {
+  event.preventDefault();
+  destroyBoxes();
+};
 
 const inputElem = document.querySelector('#controls input');
 const boxesElem = document.querySelector('#boxes');
@@ -48,27 +83,13 @@ const boxesElem = document.querySelector('#boxes');
 const createBtnElem = document.querySelector('button[data-create]');
 const destroyBtnElem = document.querySelector('button[data-destroy]');
 
+const minLimit = Number(inputElem.getAttribute('min'));
+const maxLimit = Number(inputElem.getAttribute('max'));
+
 let quantityOfElem = null;
 
-inputElem.addEventListener('input', event => {
-  quantityOfElem = event.currentTarget.value;
-});
+inputElem.addEventListener('input', handleClickInput);
 
+createBtnElem.addEventListener('click', handleCreateBtnClick);
 
-createBtnElem.addEventListener('click', event => {
-  if (quantityOfElem >= 1 && quantityOfElem <= 100) {
-    destroyBoxes();
-    createBoxes(quantityOfElem);
-    inputElem.value = '';
-    quantityOfElem = null;
-   }
-  
-});
-
-destroyBtnElem.addEventListener('click', event => {
-  destroyBoxes();
-});
-
-
-
-//--------------------------
+destroyBtnElem.addEventListener('click', handleDestroyBtnClick);

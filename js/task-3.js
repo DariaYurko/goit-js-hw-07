@@ -14,6 +14,8 @@ const inputName = document.querySelector('#name-input');
 const outputName = document.querySelector('#name-output');
 
 inputName.addEventListener('input', event => {
+  event.preventDefault();
+
   const username = event.currentTarget.value;
 
   if (isEmptyString(username)) {

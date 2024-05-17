@@ -25,41 +25,18 @@ const images = [
   },
 ];
 
-// // version 1
-// const galleryList = document.querySelector('.gallery');
-
-// function cardTemplate(card) {
-//   return `<li class="gallery__item">
-//   <img class="gallery__image" src="${card.url}" alt="${card.alt}">
-//   </li>`;
-// }
-
-// function cardsTemplate(arr) {
-//   return arr.map(cardTemplate).join('');
-// }
-
-// const markup = cardsTemplate(images);
-
-// galleryList.innerHTML = markup;
-
-
-// version 2
 const galleryList = document.querySelector('.gallery');
-const arrItem = []
-const arrImage = []
 
-images.forEach(image => {
-  const itemGallerry = document.createElement('li');
-  itemGallerry.classList.add('gallery__item');
+function cardTemplate(card) {
+  return `<li class="gallery__item">
+  <img class="gallery__image" src="${card.url}" alt="${card.alt}">
+  </li>`;
+}
 
-  const imageGallery = document.createElement('img');
-  imageGallery.classList.add('gallery__image');
+function cardsTemplate(arr) {
+  return arr.map(cardTemplate).join('');
+}
 
-  imageGallery.setAttribute('src', image.url);
-  imageGallery.setAttribute('alt', image.alt);
+const markup = cardsTemplate(images);
 
-  galleryList.append(itemGallerry);
-  itemGallerry.append(imageGallery);
-});
-
-console.log(galleryList);
+galleryList.innerHTML = markup;
